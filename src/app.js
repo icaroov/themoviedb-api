@@ -1,7 +1,5 @@
 const express = require('express')
-
-import routes from './routes'
-
+const routes = require('./routes')
 //import database from './database'
 
 class App {
@@ -21,4 +19,5 @@ class App {
   }
 }
 
-export default new App().server
+
+module.exports = new App().server

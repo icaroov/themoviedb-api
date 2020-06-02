@@ -1,14 +1,13 @@
 const { Router } = require('express')
 
-import MovieController from './controllers/MovieController'
+const MovieController = require('./controllers/MovieController')
 
 const routes = new Router()
 
 routes.get("/movies/upcoming", MovieController.upcoming)
 routes.get("/movies/genres", MovieController.genres)
-routes.get("/movies/search", MovieController.search)
+routes.get("/movie/:id/credits", MovieController.credits)
 routes.get("/movies/details/:id", MovieController.details)
+routes.get("/movie/:id/reviews", MovieController.reviews)
 
-routes.post("/movie/:id/rating", MovieController.rating)
-
-export default routes
+module.exports = routes
