@@ -1,13 +1,24 @@
 const express = require('express')
 
-const app = express()
+import routes from './routes'
 
-app.use(express.json())
+//import database from './database'
 
-app.get('/', (req, res) => {
-  return res.json({ hello: 'world' })
-})
+class App {
+  constructor() {
+    this.server = express()
 
-app.listen(3333, () => {
-  console.log('🟢 Server Up and Running...')
-})
+    this.middlewares()
+    this.routes()
+  }
+
+  middlewares() {
+    this.server.use(express.json())
+  }
+
+  routes() {
+    this.server.use(routes)
+  }
+}
+
+export default new App().server
