@@ -1,13 +1,10 @@
-const express = require('express')
-
-module.export = (req, res, next) => {
+module.exports = (req, res, next) => {
+  console.log('✨ I got a request!')
   const { method, url } = req;
 
   const logLabel = `[${method.toUpperCase()}] ${url}`
 
-  console.time(logLabel)
+  console.log(logLabel)
 
-  next()
-
-  console.timeEnd(logLabel)
+  return next()
 }

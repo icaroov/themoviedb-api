@@ -2,9 +2,11 @@ const { Router } = require('express')
 
 const MovieController = require('./controllers/MovieController')
 
-// const logRequest = require('./app/middlewares/logRequest')
+const logRequest = require('./middlewares/logRequest')
 
 const routes = new Router()
+
+routes.use(logRequest);
 
 routes.get("/movies/upcoming", MovieController.upcoming)
 routes.get("/movies/genres", MovieController.genres)
