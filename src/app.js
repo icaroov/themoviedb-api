@@ -1,6 +1,6 @@
 const express = require('express')
 const routes = require('./routes')
-//import database from './database'
+// TODO: importar database.js
 
 class App {
   constructor() {

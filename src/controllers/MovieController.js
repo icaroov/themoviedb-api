@@ -8,8 +8,16 @@ const { API_URL, API_KEY } = process.env
 
 class MovieController {
   async upcoming(req, res) {
-    const { page } = req.query;
+    console.log('✨ I got a request!')
+    const { method, url } = req
+
+    const logLabel = `[${method.toUpperCase()}] ${url}`
+
+    console.log(logLabel)
+
+    const { page, title } = req.query;
     const urlMoviesUpcoming = `${API_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`
+
 
     let response = await fetch(urlMoviesUpcoming)
     let data = await response.json()

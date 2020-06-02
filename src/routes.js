@@ -2,6 +2,8 @@ const { Router } = require('express')
 
 const MovieController = require('./controllers/MovieController')
 
+// const logRequest = require('./app/middlewares/logRequest')
+
 const routes = new Router()
 
 routes.get("/movies/upcoming", MovieController.upcoming)
