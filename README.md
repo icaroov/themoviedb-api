@@ -1,4 +1,6 @@
-<img align="center" alt="Moviedb" src=".github/logo.png" />
+<h1 align="center">
+<img alt="Moviedb" src=".github/logo.png" />
+</h1>
 
 <h3 align="center">The Moviedb API Consume 🎞</h3>
 
@@ -13,20 +15,19 @@
 
 ## Movie Database REST API
 
-API construída em NodeJS para consumir a [TMDb REST API](https://www.themoviedb.org/documentation/api). Use a API clicando neste link.
+API construída em NodeJS para consumir a [TMDb REST API](https://www.themoviedb.org/documentation/api). Use a API clicando neste [link]().
 
 ## Passos
-`// clone repo`
+// clone repo
 `git clone https://github.com/icaroov/themoviedb-api.git`
-`cd themovie-api`
 
-`// install dependecies`
+// install dependecies
 `yarn install`
 
-`// build and start project`
+// build and start project
 `yarn start`
 
-`// to see on any evironment api or browser`
+// to see on any evironment api or browser
 `yarn dev` open the link with some route `http://localhost:3333/`
 
 ## Ferramentas e Frameworks
