@@ -1,4 +1,5 @@
 const dotenv = require('dotenv')
+const jwt = require('jsonwebtoken')
 
 dotenv.config()
 
@@ -7,13 +8,14 @@ const fetch = require('node-fetch')
 const { API_URL, API_KEY } = process.env
 
 class MovieController {
+
   async upcoming(req, res) {
     const { page } = req.query;
     const urlMoviesUpcoming = `${API_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`
-
+  
     let response = await fetch(urlMoviesUpcoming)
     let data = await response.json()
-
+  
     return res.status(200).send(data.results)
   }
 
@@ -54,6 +56,19 @@ class MovieController {
     let data = await response.json()
 
     return res.status(200).send(data)
+  }
+
+  authenticate(req, res) {
+    const user = {
+      id: 1,
+      name: 'icaro'
+    }
+
+    const token = jwt.sign({ id: user.id }, 'secret', {
+      expiresIn: 86400,
+    })
+
+   res.send({user, token})
   }
 }
 
