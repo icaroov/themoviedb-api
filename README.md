@@ -15,7 +15,7 @@
 
 ## Movie Database REST API
 
-API construída em NodeJS para consumir a [TMDb REST API](https://www.themoviedb.org/documentation/api). Use a API clicando neste [link]().
+API construída em NodeJS para consumir a [TMDb REST API](https://www.themoviedb.org/documentation/api). Use a API clicando neste [link](https://themoviedatabase-api.herokuapp.com/).
 
 ## Passos
 // clone repo
